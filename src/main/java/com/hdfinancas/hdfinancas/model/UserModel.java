@@ -1,19 +1,21 @@
 package com.hdfinancas.hdfinancas.model;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@Data
-public class UserModel {
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserModel extends RepresentationModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter @Setter
+    @ApiModelProperty(notes = "The id")
     private long id;
 
     @Column(name = "name", nullable = false, length = 100)
@@ -26,18 +28,13 @@ public class UserModel {
     @ApiModelProperty(notes = "A valid cfp")
     private String cpf;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = true, length = 100)
     @Getter @Setter
     @ApiModelProperty(notes = "A valid email address")
     private String email;
 
-    @Column(nullable = false, length = 10)
-    @Getter @Setter
-    @ApiModelProperty(notes = "A valid password")
-    private String password;
-
     @ManyToOne
     @JoinColumn(name = "accountType_id")
     @Getter @Setter
-    private AccountType accountType;
+    private AccountTypeModel accountType;
 }

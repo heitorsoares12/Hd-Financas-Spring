@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name = "accountType")
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountType {
+public class AccountTypeModel {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)

@@ -23,16 +23,6 @@ public class SpringFoxConfig {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.hdfinancas.hdfinancas"))
                 .paths(PathSelectors.any())
-                .build()
-                .apiInfo(info());
-    }
-
-    private ApiInfo info(){
-        return new ApiInfo("Documentação Oficial", "Aplicação Spring", "1.0",
-                "http://www.jlgregorio.com.br",
-                new Contact("Heitor Alexandre Soares", "http://www.jlgregorio.com.br",
-                        "heitor.soares@fate.sp.gov.br"),
-                "License X", "http://www.jlgregorio.com.br",
-                Collections.emptyList());
+                .build();
     }
 }
