@@ -1,6 +1,7 @@
 package com.hdfinancas.hdfinancas.service;
 
 import com.hdfinancas.hdfinancas.model.AccountTypeModel;
+import com.hdfinancas.hdfinancas.model.UserModel;
 import com.hdfinancas.hdfinancas.repository.AccountTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,7 @@ public class AccountTypeService {
     public List<AccountTypeModel> findAll() { return repository.findAll(); }
 
     public Optional<AccountTypeModel> findById(long id ) { return repository.findById(id); }
+
+    public AccountTypeModel save(AccountTypeModel model) { return repository.save(model); }
 
 }
